@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="korisnickoIme"></label>
+    <input type="text" id="korisnickoIme">
+    
+    <label for="sifra"></label>
+    <input class="form-control" type="text" id="sifra">
+    <button id="ulogujSe">Log in</button>
+    
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#ulogujSe").click(function(){
+            $.post("uloguj.php",{user:$("#korisnickoIme").val(),sifra:$("#korisnickoIme").val},function(data){
+                if(data==="true"){
+                    window.location.replace("index.html");
+                }
+            })
+        })
+    })
+
+</script>
+</body>
+</html>

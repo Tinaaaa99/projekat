@@ -46,6 +46,36 @@ Flight::render('kviz.php',["result"=>$result]);
 
 });
 
+
+Flight::route('/promjene/dodaj',function(){
+	$pitanje=$_GET['pitanje'];
+	$tacan=$_GET['tacan'];
+	$netacan1=$_GET['netacan1'];
+	$netacan2=$_GET['netacan2'];
+	$netacan3=$_GET['netacan3'];
+	$predmet=$_GET['predmet'];
+	$sql = "INSERT INTO pitanje (pitanje,tacan, netacan1, netacan2,netacan3,kvizID)
+	VALUES (:pitanje, :tacan, :netacan1,:netacan2,:netacan3,:predmet)";
+	 $db = Flight::db();
+	 
+	 $stmt = $db->prepare($sql);
+	 $stmt->execute(["pitanje" => $pitanje,"tacan" => $tacan,"netacan1" => $netacan1,"netacan2" => $netacan2,"netacan3" => $netacan3,"predmet" => $predmet]);
+	Flight::redirect('add');
+});
+
+
+Flight::route('/promjene/brisi',function(){
+	$pitanje=$_GET['pitanje'];
+	
+    
+	$sql = "DELETE FROM pitanje WHERE pitanje='$pitanje'";
+	
+	 $db = Flight::db();
+	 
+	 $stmt = $db->prepare($sql);
+	 $stmt->execute(["pitanje" => $pitanje]);
+	Flight::redirect('add');
+});
 	
 Flight::route('/add', function(){
 	setsession();

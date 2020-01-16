@@ -66,7 +66,7 @@
   <button type="button" onclick="sortTable(0)">Sortiraj po nazivu pitanja!</button >
   
   <p><b>Ubacivanje u bazu</b></p>
-  <form action="phpUcitavanjaIBrisanja\dodaj.php">
+  <form action="promjene\dodaj">
   Pitanje:<br>
   <input type="text" name="pitanje" value=""><br>
   Tacan odgovor:<br>
@@ -92,7 +92,7 @@
   </form>
 
 <p><b>Obriši</b></p>
-  <form  action="phpUcitavanjaIBrisanja\obrisi.php">
+  <form  action="promjene\brisi">
   Naziv pitanja:<br>
   <input id="brisanje" type="text" name="pitanje" value=""><br>
  

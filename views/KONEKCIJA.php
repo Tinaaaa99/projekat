@@ -4,8 +4,12 @@ ini_set("display_errors", false);
 ini_set("log_errors",true);
 //ini_set("error_log", "upravljanjeGreskama.log");
 
-
-$konekcija = new MySqli("localhost","root","","kviz");
-$konekcija->set_charset("utf8");
+$servername = "localhost";
+    $username = "tina";
+    $password = "tina00";
+    $dbname = "kviz";
+    
+    // Create connection
+    $konekcija = new mysqli($servername, $username, $password, $dbname);
 
  ?>

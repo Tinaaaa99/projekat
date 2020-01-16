@@ -66,30 +66,30 @@
   <button type="button" onclick="sortTable(0)">Sortiraj po nazivu pitanja!</button >
   
   <p><b>Ubacivanje u bazu</b></p>
-  <form action="promjene\dodaj">
+  
   Pitanje:<br>
-  <input type="text" name="pitanje" value=""><br>
+  <input type="text" name="pitanje" value="" id="pitanjeid"><br>
   Tacan odgovor:<br>
-  <input type="text" name="tacan" value=""><br><br>
+  <input type="text" name="tacan" value="" id="tacanid"><br><br>
   Netacan odgovor1:<br>
-  <input type="text" name="netacan1" value=""><br>
+  <input type="text" name="netacan1" value="" id="netacan1"><br>
   Netacan odgovor2:<br>
-  <input type="text" name="netacan2" value=""><br><br>
+  <input type="text" name="netacan2" value=""id="netacan2"><br><br>
   Netacan odgovor3:<br>
-  <input type="text" name="netacan3" value=""><br><br>
+  <input type="text" name="netacan3" value=""id="netacan3"><br><br>
 
   <p>Selektujte predmet:</p>
 
-  <select name="predmet">
+  <select name="predmet" id="predmet">
     <option value="1">Baze</option>
     <option value="2">Iteh</option>
   </select>
   <br><br>
  
 
-  <input type="submit" value="Dodaj" >
+  <button onclick ="on_add()" >"Dodaj" </button>
 
-  </form>
+ 
 
 <p><b>Obriši</b></p>
   <form  action="promjene\brisi">
@@ -102,8 +102,37 @@
 </div>
 </article>
 
+
+
+
+
 <footer>
 <?php include'FOOTER.php';?>
 </footer>
+
+<script>
+  function on_add(){
+    $.ajax({
+        url: 'promjene/dodaj',
+        type: 'GET',
+        data: {
+          "pitanje":document.getElementById("pitanjeid").value,
+          "tacan":document.getElementById("tacanid").value,
+          "netacan1":document.getElementById("netacan1").value,
+          "netacan2":document.getElementById("netacan2").value,
+          "netacan3":document.getElementById("netacan3").value,
+          "predmet":document.getElementById("predmet").value
+        },
+        dataType: "json",
+        success: (data) => {
+         
+        }
+      })
+
+
+  }
+
+</script>
+
     </body>
 </html>

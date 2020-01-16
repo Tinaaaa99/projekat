@@ -61,7 +61,7 @@ input[type=submit]:hover {
     <label for="lname">Prezime</label>
     <input type="text" id="lname" name="lastname" placeholder="Prezime..">
 
-    
+
     
 
     <label for="subject">Predmet</label>

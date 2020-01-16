@@ -31,12 +31,12 @@ Flight::route('/kviz/@kategorija', function($kategorija){
 	if($kategorija=='baze'){
 		$kvizid=1;
 	}else{
-		$kvizid=2;
+		$kvizid=3;
 
 	}
 
     $db = Flight::db();
-    $sql = "SELECT pitanje,tacan,netacan1,netacan2,netacan3 FROM pitanje where kvizId=:kvizid limit 4";
+    $sql = "SELECT pitanje,tacan,netacan1,netacan2,netacan3 FROM pitanje where kvizId=:kvizid ";
     $stmt = $db->prepare($sql);
 	$stmt->execute(["kvizid" => $kvizid]);
 	$result=$stmt->fetchAll();
@@ -60,7 +60,7 @@ Flight::route('/promjene/dodaj',function(){
 	 
 	 $stmt = $db->prepare($sql);
 	 $stmt->execute(["pitanje" => $pitanje,"tacan" => $tacan,"netacan1" => $netacan1,"netacan2" => $netacan2,"netacan3" => $netacan3,"predmet" => $predmet]);
-	Flight::redirect('add');
+	
 });
 
 

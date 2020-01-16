@@ -205,15 +205,22 @@ const questions = [
     ] --unutar echa
   },*/
 
-  
+    $p=["tacan","netacan1","netacan2","netacan3"];
     foreach($result as $row) {
+      shuffle($p);
     echo '{
       question: " ' . $row["pitanje"] . ' ",
-      answers: [
-        { text: " '. $row["tacan"] .' ", correct: true },
-        { text:" '. $row["netacan1"] .'", correct: false },
-        { text:" '. $row["netacan2"] .'", correct: false },
-        { text:" '. $row["netacan3"] .'", correct: false }
+      answers: [ ';
+      foreach($p as $t){
+        if($t=="tacan"){
+          $c="true";
+        }else{
+          $c="false";
+        }
+        echo '{ text: " '. $row[$t] .' ", correct: '.$c .'},';
+      }
+        
+       echo '
       ] 
     },';
   }   

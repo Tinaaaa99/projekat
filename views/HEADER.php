@@ -55,7 +55,7 @@ text-align:center;
       <ul class="nav navbar-nav navbar-right">
        <li class="active"><a href="index.php">Početna</a></li>
         <li><a href="About">o Nama</a></li>
-        <li><a href="blog.php">Blog</a></li>
+        <li><a href="blog.php">Tačni odgovori</a></li>
         
          <?php if(empty($_SESSION['ulogovaniRadnik'])){
            

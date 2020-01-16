@@ -9,7 +9,7 @@
                    <h4>Information</h4>
                    <ul class="row">
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="ABOUT.php">About</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="BLOG.php">Blog</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="BLOG.php">Tačni odgovori</a></li>
 				<?php if(empty($_SESSION['ulogovaniRadnik'])){
                   ?>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="CONTACT.php">Contact</a></li>

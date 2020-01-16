@@ -23,6 +23,11 @@
     width:200px;
     height:100px;
 }
+.prevod{
+margin-left:960px;
+margin-top:-90px;
+text-align:center;      
+}
 </style>  
 
 <body>
@@ -91,7 +96,22 @@
 <!-- Header Starts -->
 <div class="header">
 <a href="INDEX.php"><img class="logo" src="logo.png" alt="QUIZ"></a>   
-      
+<div class="prevod">
+<p>Translate this page:</p>
+
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+</div>
+
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</div>
 </div>
 <!-- #Header Starts -->
 </div>
